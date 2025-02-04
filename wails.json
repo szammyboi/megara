@@ -1,0 +1,14 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "megara",
+  "wailsjsdir": "./frontend/src/lib",  
+  "outputfilename": "megara",
+  "frontend:install": "bun install",
+  "frontend:build": "bun run build",
+  "frontend:dev:watcher": "bun run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "Sam Morse",
+    "email": "78485053+szammyboi@users.noreply.github.com"
+  }
+}

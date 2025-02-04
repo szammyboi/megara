@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@fontsource/fira-mono';
+
+@font-face {
+    font-family: 'Jersey';
+    font-style: normal;
+    src: url('/fonts/Jersey25-Regular.ttf') format('truetype');
+}
+
