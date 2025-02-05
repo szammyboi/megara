@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
+    import SearchBar from '$lib/components/SearchBar.svelte';
     import SearchCard from '$lib/components/SearchCard.svelte';
 </script>
 
@@ -9,16 +10,26 @@
 </svelte:head>
 
 <section>
-	<SearchCard word="ispirare, stimolare, influenzare" type="verb" definition="inspire somebody, motivate somebody"/>
+	<div>
+		<SearchCard word="ispirare, stimolare, influenzare" type="verb" definition="inspire somebody, motivate somebody"/>
+	</div>
+	<SearchBar symbol="EN"/>
 </section>
 
 <style>
 	section {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		flex: 0.6;
+		flex: 1;
+	}
+
+	div {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		flex: 1;
 	}
 
 </style>
