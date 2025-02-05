@@ -1,8 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/state';
 
-	let native: string = "EN";
-	let learning: string = "IT";
+	interface Props {
+		native: string;
+		learning: string;
+	}
+
+	let {
+		native,
+		learning,
+	}: Props = $props();
+
 </script>
 
 <header>
@@ -46,7 +54,7 @@
 		margin-top: 2vw;
 
 		font-family: 'Jersey';
-		font-size: 37px;
+		font-size: 45px;
 	}
 
 	.left {

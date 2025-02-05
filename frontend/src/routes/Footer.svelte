@@ -24,7 +24,7 @@
 
 <footer>
 	<div id={chosen == 1 ? "active1" : ""} on:click={() => chosen = 1}>
-		MEGARA	
+		SEARCH	
 	</div>
 
 	<div id={chosen == 2 ? "active2" : ""} on:click={() => chosen = 2}>
@@ -49,7 +49,7 @@
 		margin-bottom: 2vw;
 		color: #755c3b;
 		font-family: 'Jersey';
-		font-size: 37px;
+		font-size: 45px;
 	}
 
 	footer div {

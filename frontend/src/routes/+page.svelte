@@ -1,6 +1,6 @@
 <script lang="ts">
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcomeFallback from '$lib/images/svelte-welcome.png';
+	import Card from '$lib/components/Card.svelte';
+    import SearchCard from '$lib/components/SearchCard.svelte';
 </script>
 
 <svelte:head>
@@ -9,7 +9,7 @@
 </svelte:head>
 
 <section>
-	
+	<SearchCard word="ispirare, stimolare, influenzare" type="verb" definition="inspire somebody, motivate somebody"/>
 </section>
 
 <style>
@@ -21,23 +21,4 @@
 		flex: 0.6;
 	}
 
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
 </style>
