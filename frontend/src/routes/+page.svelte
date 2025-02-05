@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Card from '$lib/components/Card.svelte';
     import SearchBar from '$lib/components/SearchBar.svelte';
     import SearchCard from '$lib/components/SearchCard.svelte';
 </script>
