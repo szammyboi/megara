@@ -35,7 +35,7 @@
 		justify-content: space-between;
 		width: 100%;
 		height: 100%;
-		font-family: 'Jersey';
+		--font-family: 'Alagard';
 		padding: 20px;
 	}
 

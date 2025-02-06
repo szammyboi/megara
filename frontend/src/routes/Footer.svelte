@@ -48,7 +48,7 @@
 		margin-left: 7.5vw;
 		margin-bottom: 2vw;
 		color: #755c3b;
-		font-family: 'Jersey';
+		--font-family: 'Jersey';
 		font-size: 45px;
 	}
 
@@ -62,7 +62,7 @@
 		width: 85vw;
 		margin-left: 7.5vw;
 		color: #755c3b;
-		font-family: 'Jersey';
+		--font-family: 'Jersey';
 		font-size: 37px;
 		margin-bottom: -3vw;
 	}

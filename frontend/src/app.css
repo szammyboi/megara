@@ -9,3 +9,48 @@
     src: url('/fonts/Jersey25-Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Alagard';
+    font-style: normal;
+    src: url('/fonts/alagard.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'KiwiSoda';
+    font-style: normal;
+    src: url('/fonts/KiwiSoda.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Daydream';
+    font-style: normal;
+    src: url('/fonts/Daydream.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Daydream';
+    font-style: normal;
+    src: url('/fonts/Daydream.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Edundot';
+    font-style: normal;
+    src: url('/fonts/edundot.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'English';
+    font-style: normal;
+    src: url('/fonts/english.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Grape';
+    font-style: normal;
+    src: url('/fonts/GrapeSoda.ttf') format('truetype');
+}
+
+html {
+	font-family: 'Grape';
+}

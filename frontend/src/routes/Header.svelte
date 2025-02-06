@@ -53,7 +53,7 @@
 		margin-left: 7.5vw;
 		margin-top: 2vw;
 
-		font-family: 'Jersey';
+		--font-family: 'Jersey';
 		font-size: 45px;
 	}
 
