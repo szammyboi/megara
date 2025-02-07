@@ -35,25 +35,28 @@
 		justify-content: space-between;
 		width: 100%;
 		height: 100%;
-		--font-family: 'Alagard';
-		padding: 20px;
+		padding: 15px;
 	}
 
 	#title {
-		font-size: 45px;
-		line-height: 1;
+		font-size: 25px;
+		line-height: 1.4;
 		color: #f18d00;
 		padding-bottom: 10px;
+		font-family: 'Daydream';
+		overflow-wrap: break-word;
 	}
 
 	#type {
+		font-family: 'Daydream';
+		color: #362712;
 		background: #f18d00;
 		width: fit-content;
-		font-size: 19px;
+		font-size: 10px;
 		padding-left: 5px;
 		padding-right: 5px;
-		line-height:1;
-		margin-bottom: 5px;
+		line-height:1.5;
+		margin-bottom: 10px;
 	}
 
 	#def {
@@ -63,5 +66,6 @@
 	.text {
 		font-size: 25px;
 		color: #755C3B;
+		line-height: 1;
 	}
 </style>

@@ -28,9 +28,9 @@
 }
 
 @font-face {
-    font-family: 'Daydream';
+    font-family: 'Rose';
     font-style: normal;
-    src: url('/fonts/Daydream.ttf') format('truetype');
+    src: url('/fonts/VCRosdNEUE.ttf') format('truetype');
 }
 
 @font-face {
@@ -52,5 +52,5 @@
 }
 
 html {
-	font-family: 'Grape';
+	font-family: 'Rose';
 }

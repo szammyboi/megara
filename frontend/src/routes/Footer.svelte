@@ -48,8 +48,8 @@
 		margin-left: 7.5vw;
 		margin-bottom: 2vw;
 		color: #755c3b;
-		--font-family: 'Jersey';
-		font-size: 45px;
+		font-family: 'Daydream';
+		font-size: 25px;
 	}
 
 	footer div {
@@ -62,9 +62,9 @@
 		width: 85vw;
 		margin-left: 7.5vw;
 		color: #755c3b;
-		--font-family: 'Jersey';
-		font-size: 37px;
-		margin-bottom: -3vw;
+		font-family: 'Daydream';
+		font-size: 25px;
+		margin-bottom: -1.25vw;
 	}
 
 	#active1 {

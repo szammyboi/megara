@@ -3,16 +3,18 @@
 
 	interface Props {
 		symbol: string;
+		value?: string;
 	}
 
 	let {
 		symbol,
+		value = $bindable(),
 	}: Props = $props();
 </script>
 
 
 <section>
-	<input />
+	<input bind:value={value} />
 	<div id="symbolarea">
 		<div id="symbol">
 			{symbol}
@@ -27,8 +29,8 @@
 		height: 80px;
 		display: flex;
 		flex-direction:row;
-		font-family: 'Jersey';
 		border-left: solid 6px #da1d4c;
+		margin-bottom: 10px;
 	}
 
 	input {
@@ -37,7 +39,7 @@
 		outline: none;
 		appearance: none;
 		width: 100%;
-		font-size: 32px;
+		font-size: 30px;
 		color: #d9ae80;
 	}
 
@@ -56,6 +58,7 @@
 		background-color: #ff5813;
 		width: 5vw;
 		height: 5vw;
-		font-size: 22px;
+		font-size: 13px;
+		font-family: "Daydream";
 	}
 </style>

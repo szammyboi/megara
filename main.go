@@ -58,7 +58,7 @@ func main() {
 	// Create application with options
 	err = wails.Run(&options.App{
 		Title:  "megara",
-		Width:  800,
+		Width:  900,
 		Height: 800,
 		DisableResize: true,
 		Frameless: false,
