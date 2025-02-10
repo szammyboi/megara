@@ -15,6 +15,7 @@
 		width: 55vw;
 		height: 55vh;
 		border-radius: 15px;
+		user-select:none;
 	}
 
 	#container {
