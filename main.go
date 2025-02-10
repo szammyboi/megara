@@ -2,13 +2,14 @@ package main
 
 import (
 	"embed"
-	"strings"
-	"os"
 	"fmt"
+	"os"
+	"strings"
 
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
+	"github.com/wailsapp/wails/v2/pkg/options/windows"
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
@@ -55,6 +56,7 @@ func main() {
 	file.WriteString("test string")
 	file.Close()
 
+
 	// Create application with options
 	err = wails.Run(&options.App{
 		Title:  "megara",
@@ -73,6 +75,18 @@ func main() {
         },
 		Bind: []interface{}{
 			app,
+		},
+		Windows: &windows.Options{
+			CustomTheme: &windows.ThemeSettings {
+				DarkModeTitleBar:   windows.RGB(34, 26, 2),
+                DarkModeTitleText:  windows.RGB(129, 106, 69),
+                DarkModeBorder:     windows.RGB(34, 26, 2),
+				DarkModeTitleBarInactive: windows.RGB(54, 39, 18),
+				DarkModeTitleTextInactive: windows.RGB(217, 174, 128),
+                LightModeTitleBar:  windows.RGB(34, 26, 2),
+                LightModeTitleText: windows.RGB(129, 106, 69),
+                LightModeBorder:    windows.RGB(34, 26, 2),	
+			},
 		},
 	})
 
