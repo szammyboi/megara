@@ -17,12 +17,9 @@
 <Card>
 	<div id="align">
 		<div>
-			<h1 id="title">{word.toLowerCase()}</h1>	
+			<h1 id="title">{word.toUpperCase()}:</h1>	
 			<div id="type">{type.toLowerCase()}</div>	
-			<h1 class="text" id="def">{definition.toLowerCase()}</h1>	
-		</div>
-		<div class="text">
-			ctrl-a to add
+			<h1 id="def">{definition.toLowerCase()}</h1>	
 		</div>
 	</div>
 </Card>
@@ -32,40 +29,37 @@
 		display: flex;
 		flex-direction:column;
 		align-items: left;
-		justify-content: space-between;
+		justify-content: center;
 		width: 100%;
 		height: 100%;
-		padding: 15px;
 	}
 
 	#title {
-		font-size: 25px;
-		line-height: 1.4;
-		color: #f18d00;
+		font-size: 42px;
+		line-height: 0.95;
+		color: #221a02;
 		padding-bottom: 10px;
-		font-family: 'Daydream';
+		font-family: 'Alagard';
 		overflow-wrap: break-word;
 	}
 
 	#type {
-		font-family: 'Daydream';
-		color: #362712;
-		background: #f18d00;
+		font-family: 'Alagard';
+		color: #ef540a;
+		background: #221a02;
 		width: fit-content;
-		font-size: 10px;
+		font-size: 22px;
 		padding-left: 5px;
 		padding-right: 5px;
-		line-height:1.5;
+		line-height:1.1;
 		margin-bottom: 10px;
 	}
 
 	#def {
 		color: #d9ae80;
-	}
-
-	.text {
-		font-size: 25px;
-		color: #755C3B;
+		font-size: 30px;
+		color: #221a02;
 		line-height: 1;
+		font-family:"Alagard";
 	}
 </style>

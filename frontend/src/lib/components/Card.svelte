@@ -3,16 +3,24 @@
 	let { children, ...rest }: SvelteHTMLElements['div'] = $props();
 </script>
 
-<div {...rest} >
-	{@render children?.()}
+<div {...rest} id="wrapper" >
+	<div id="container">
+		{@render children?.()}
+	</div>
 </div>
 
 <style>
-	div {
-		--background: #362712;
+	#wrapper {
 		background: #ef540a;
-		width: 50vw;
+		width: 55vw;
 		height: 55vh;
-		border-radius: 10px;
+		border-radius: 15px;
+	}
+
+	#container {
+		width: calc(55vw - 10vh);
+		height: 45vh;
+		margin-left: 5vh;
+		margin-top: 5vh;
 	}
 </style>

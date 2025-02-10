@@ -31,11 +31,10 @@
 		height: 60px;
 		display: flex;
 		flex-direction:row;
-		--border-left: solid 6px #da1d4c;
 		margin-right: 7vw;
 	}
 
-	input {
+	input, input:focus {
 		all: unset;
 		padding-left: 20px;
 		outline: none;
@@ -44,6 +43,11 @@
 		font-size: 30px;
 		color: #d9ae80;
 		font-family: "Alagard";
+	}
+
+	input::selection {
+		color: #221a02;
+		background-color: #ef540a;
 	}
 
 	#symbolarea {

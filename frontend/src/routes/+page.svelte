@@ -13,7 +13,10 @@
 </svelte:head>
 
 <section>
-	<SearchCard word="test" definition="test" type="verb"/>
+	<div id="searchcontainer">
+		<SearchCard word="ISPIRARE, STIMOLARE, INFLUENZARE" definition="inspire somebody, motivate somebody" type="verb"/>
+		<SearchCard word="MOTIVARE" definition="inspire somebody, motivate somebody" type="verb"/>
+	</div>
 </section>
 
 <style>
@@ -30,6 +33,17 @@
 		flex-direction: column;
 		justify-content: space-evenly;
 		flex: 1;
+	}
+
+	#searchcontainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: left;
+		column-gap: 3vw;
+		width: fit-content;
+		max-width: 100%;
+		margin-left: 3vw;
 	}
 
 </style>
