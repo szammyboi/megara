@@ -10,10 +10,9 @@
 <style>
 	div {
 		--background: #362712;
-		background: #362712;
-		width: 450px;
-		height: 280px;
-		border-radius: 20px;
-		border: solid 6px #f18d00;
+		background: #ef540a;
+		width: 50vw;
+		height: 55vh;
+		border-radius: 10px;
 	}
 </style>

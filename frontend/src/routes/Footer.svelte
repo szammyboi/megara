@@ -1,55 +1,27 @@
 <script lang="ts">
 	import { page } from '$app/state';
+    import Logo from '$lib/components/Logo.svelte';
+    import SearchBar from '$lib/components/SearchBar.svelte';
 
-	let chosen = $state(1);
 </script>
 
-<div id="star">
-	<div id={chosen == 1 ? "active1" : ""}>
-		*
-	</div>
-
-	<div id={chosen == 2 ? "active2" : ""}>
-		*
-	</div>
-
-	<div id={chosen == 3 ? "active3" : ""}>
-		*
-	</div>
-
-	<div id={chosen == 4 ? "active4" : ""}>
-		*
-	</div>
-</div>
-
 <footer>
-	<div id={chosen == 1 ? "active1" : ""} on:click={() => chosen = 1}>
-		SEARCH	
-	</div>
-
-	<div id={chosen == 2 ? "active2" : ""} on:click={() => chosen = 2}>
-		LEARN
-	</div>
-
-	<div id={chosen == 3 ? "active3" : ""} on:click={() => chosen = 3}>
-		CARDS
-	</div>
-
-	<div id={chosen == 4 ? "active4" : ""} on:click={() => chosen = 4}>
-		REMEMBER
-	</div>
+	<Logo />
+	<SearchBar symbol="?"/>
 </footer>
 
 <style>
 	footer {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
-		width: 85vw;
-		margin-left: 7.5vw;
-		margin-bottom: 2vw;
+		align-content:center;
+		align-items: center;
+		width: 94vw;
+		margin-left: 3vw;
+		margin-bottom: 3vw;
 		color: #755c3b;
-		font-family: 'Daydream';
-		font-size: 25px;
+		--background-color: blue;
 	}
 
 	footer div {

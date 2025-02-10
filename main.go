@@ -58,8 +58,8 @@ func main() {
 	// Create application with options
 	err = wails.Run(&options.App{
 		Title:  "megara",
-		Width:  900,
-		Height: 800,
+		Width:  1000,
+		Height: 500,
 		DisableResize: true,
 		Frameless: false,
 		AssetServer: &assetserver.Options{

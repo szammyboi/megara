@@ -7,8 +7,6 @@
 </script>
 
 <div class="app">
-	<Header native="EN" learning="ITA" />
-
 	<main>
 		{@render children()}
 	</main>
