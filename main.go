@@ -55,7 +55,6 @@ func main() {
 
 	file.Close()
 
-
 	// Create application with options
 	err = wails.Run(&options.App{
 		Title:  "megara",
@@ -73,6 +72,9 @@ func main() {
         },
 		Bind: []interface{}{
 			app,
+		},
+		EnumBind: []interface{}{
+			DefaultColors,
 		},
 		Windows: &windows.Options{
 			CustomTheme: &windows.ThemeSettings {

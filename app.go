@@ -144,3 +144,7 @@ func (a *App) FetchDetails(lang1 string, lang2 string, word string) []WordDetail
 	c.Visit("https://www.wordreference.com/" +lang1 + lang2 +"/" + word)
 	return details
 }
+
+func (a *App) GetColors() []ColorScheme {
+	return a.color_schemes
+}

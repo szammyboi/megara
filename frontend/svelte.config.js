@@ -13,6 +13,7 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		alias: {
 			$go: 'src/lib/wailsjs/go/main/App',
+			$runtime: 'src/lib/wailsjs/runtime/runtime',
 			$gotypes: 'src/lib/wailsjs/types'
 		},
 		adapter: adapter()

@@ -2,29 +2,56 @@ package main
 
 import (
 	"os"
-	"fmt"
 	"github.com/BurntSushi/toml"
 	"github.com/fsnotify/fsnotify"
+	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 type ColorScheme struct {
-	Name string
-	Background string
-	Overlay string
-	Text string
-	Color1 string
-	Color2 string
-	Color3 string
-	Color4 string
+	Name string `json:"name"`
+	Background string `json:"background"`
+	Overlay string `json:"overlay"`
+	Text string `json:"text"`
+	Color1 string `json:"color1"`
+	Color2 string `json:"color2"`
+	Color3 string `json:"color3"`
+	Color4 string `json:"color4"`
 }
 
 type ColorSchemeLayout struct {
 	ColorSchemes map[string]toml.Primitive `toml:"colorschemes"`
 }
 
+type ColorDefaults string
+
+const (
+    Name          ColorDefaults = "Megara"
+    Background    ColorDefaults = "#201a01"
+    Overlay       ColorDefaults = "#342711"
+    Text          ColorDefaults = "#d9ae80"
+    Color1        ColorDefaults = "#ef540a"
+    Color2        ColorDefaults = "#cc094d"
+    Color3        ColorDefaults = "#578b99"
+    Color4        ColorDefaults = "#e58c00"
+)
+
+var DefaultColors  = []struct {
+    Value  ColorDefaults
+    TSName string
+}{
+    {Name, "NAME"},
+    {Background, "BACKGROUND"},
+    {Overlay, "OVERLAY"},
+    {Text, "TEXT"},
+    {Color1, "COLOR1"},
+    {Color2, "COLOR2"},
+    {Color3, "COLOR3"},
+    {Color4, "COLOR4"},
+}
+
 func GetDefaultColors() ColorScheme {
 	return ColorScheme {
-		Name: "Megara",
+		Name: "Megara", 
 		Background: "#201a01",
 		Overlay: "#342711",
 		Text: "#d9ae80",
@@ -80,6 +107,7 @@ func (a *App) LoadColors() {
                 }
 				if event.Op == fsnotify.Write {
 					a.color_schemes = ReadColors()
+					runtime.EventsEmit(a.ctx, "updateColors", a.color_schemes)
 				}
             case _, ok := <-watcher.Errors:
                 if !ok {

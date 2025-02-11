@@ -1,9 +1,10 @@
 <script lang="ts">
 	import type { SvelteHTMLElements } from 'svelte/elements';
-	let { children, ...rest }: SvelteHTMLElements['div'] = $props();
+	//let { color, children, ...rest }: SvelteHTMLElements['div'] = $props();
+	let { color, children, ...rest }: any = $props();
 </script>
 
-<div {...rest} id="wrapper" >
+<div {...rest} id="wrapper" style="background: {color}">
 	<div id="container">
 		{@render children?.()}
 	</div>
@@ -11,7 +12,7 @@
 
 <style>
 	#wrapper {
-		background: #ef540a;
+		--background: #ef540a;
 		width: 55vw;
 		height: 55vh;
 		border-radius: 15px;

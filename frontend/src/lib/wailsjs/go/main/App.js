@@ -6,6 +6,10 @@ export function FetchDetails(arg1, arg2, arg3) {
   return window['go']['main']['App']['FetchDetails'](arg1, arg2, arg3);
 }
 
+export function GetColors() {
+  return window['go']['main']['App']['GetColors']();
+}
+
 export function LoadColors() {
   return window['go']['main']['App']['LoadColors']();
 }
