@@ -16,6 +16,7 @@ import (
 type App struct {
 	ctx context.Context
 	client *fasthttp.Client
+	color_schemes []ColorScheme
 }
 
 type SearchResult struct {
@@ -53,6 +54,7 @@ func (a *App) startup(ctx context.Context) {
 			Concurrency:      4096, DNSCacheDuration: time.Hour,
 		}).Dial,
 	}
+	a.LoadColors()
 }
 
 // domReady is called after front-end resources have been loaded

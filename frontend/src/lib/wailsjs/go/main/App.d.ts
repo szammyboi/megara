@@ -4,4 +4,6 @@ import {main} from '../models';
 
 export function FetchDetails(arg1:string,arg2:string,arg3:string):Promise<Array<main.WordDetails>>;
 
+export function LoadColors():Promise<void>;
+
 export function SearchWord(arg1:string,arg2:string,arg3:string):Promise<Array<main.SearchResult>>;

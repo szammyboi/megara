@@ -5,6 +5,8 @@ go 1.21
 toolchain go1.23.5
 
 require (
+	github.com/BurntSushi/toml v0.3.1
+	github.com/fsnotify/fsnotify v1.4.9
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/valyala/fasthttp v1.58.0
 	github.com/wailsapp/wails/v2 v2.9.2

@@ -53,7 +53,6 @@ func main() {
         return
     }
 
-	file.WriteString("test string")
 	file.Close()
 
 
@@ -67,7 +66,6 @@ func main() {
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
-		BackgroundColour: &options.RGBA{R: 34, G: 26, B: 2, A: 1},
 		OnStartup:        app.startup,
 		SingleInstanceLock: &options.SingleInstanceLock{
             UniqueId:               "e3984e08-28dc-4e3d-b70a-45e961589cdc",
@@ -79,13 +77,15 @@ func main() {
 		Windows: &windows.Options{
 			CustomTheme: &windows.ThemeSettings {
 				DarkModeTitleBar:   windows.RGB(34, 26, 2),
-                DarkModeTitleText:  windows.RGB(129, 106, 69),
+                DarkModeTitleText:  windows.RGB(34, 26, 2),
                 DarkModeBorder:     windows.RGB(34, 26, 2),
 				DarkModeTitleBarInactive: windows.RGB(54, 39, 18),
-				DarkModeTitleTextInactive: windows.RGB(217, 174, 128),
+				DarkModeTitleTextInactive: windows.RGB(54, 39, 18),
                 LightModeTitleBar:  windows.RGB(34, 26, 2),
-                LightModeTitleText: windows.RGB(129, 106, 69),
+                LightModeTitleText: windows.RGB(34, 26, 2),
                 LightModeBorder:    windows.RGB(34, 26, 2),	
+				LightModeTitleBarInactive: windows.RGB(54, 39, 18),
+				LightModeTitleTextInactive: windows.RGB(54, 39, 18),
 			},
 		},
 	})
