@@ -51,14 +51,14 @@ var DefaultColors  = []struct {
 
 func GetDefaultColors() ColorScheme {
 	return ColorScheme {
-		Name: "Megara", 
-		Background: "#201a01",
-		Overlay: "#342711",
-		Text: "#d9ae80",
-		Color1: "#ef540a",
-		Color2: "#cc094d",
-		Color3: "#578b99",
-		Color4: "#e58c00",
+		Name: string(Name) , 
+		Background: string(Background),
+		Overlay: string(Overlay),
+		Text: string(Text),
+		Color1: string(Color1),
+		Color2: string(Color2),
+		Color3: string(Color3),
+		Color4: string(Color4),
 	}
 }
 
