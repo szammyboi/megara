@@ -4,6 +4,8 @@ import {main} from '../models';
 
 export function FetchDetails(arg1:string,arg2:string,arg3:string):Promise<Array<main.WordDetails>>;
 
+export function GetActiveColor():Promise<main.ColorScheme>;
+
 export function GetColors():Promise<Array<main.ColorScheme>>;
 
 export function LoadColors():Promise<void>;

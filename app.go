@@ -17,6 +17,7 @@ type App struct {
 	ctx context.Context
 	client *fasthttp.Client
 	color_schemes []ColorScheme
+	active ColorScheme
 }
 
 type SearchResult struct {
@@ -147,4 +148,8 @@ func (a *App) FetchDetails(lang1 string, lang2 string, word string) []WordDetail
 
 func (a *App) GetColors() []ColorScheme {
 	return a.color_schemes
+}
+
+func (a *App) GetActiveColor() ColorScheme {
+	return a.active
 }

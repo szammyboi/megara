@@ -19,6 +19,7 @@ type ColorScheme struct {
 }
 
 type ColorSchemeLayout struct {
+	Active string
 	ColorSchemes map[string]toml.Primitive `toml:"colorschemes"`
 }
 
@@ -62,13 +63,16 @@ func GetDefaultColors() ColorScheme {
 	}
 }
 
-func ReadColors() []ColorScheme {
+func ReadColors() (ColorScheme, []ColorScheme) {
+	var active ColorScheme
 	var schemes []ColorScheme
 
 	schemes = append(schemes, GetDefaultColors())
+	active = schemes[0]
+
 	file, err := os.ReadFile(MEGARA_DIR + "colors.toml")
 	if (err != nil) {
-		return schemes
+		return active, schemes
 	}
 
 	data := string(file)
@@ -76,21 +80,24 @@ func ReadColors() []ColorScheme {
 	tml, err := toml.Decode(data, &layout)
 
 	if err != nil {
-		return schemes
+		return active, schemes
 	}
 
 	for name, table := range layout.ColorSchemes {
 		var scheme ColorScheme
 		tml.PrimitiveDecode(table, &scheme)
 		scheme.Name = name 
+		if (name == layout.Active) {
+			active = scheme
+		}
 		schemes = append(schemes, scheme)
 	}
 
-	return schemes
+	return active, schemes
 }
 
 func (a *App) LoadColors() {
-	a.color_schemes = ReadColors()
+	a.active, a.color_schemes = ReadColors()
 
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
@@ -106,8 +113,9 @@ func (a *App) LoadColors() {
                     return
                 }
 				if event.Op == fsnotify.Write {
-					a.color_schemes = ReadColors()
+					a.active, a.color_schemes = ReadColors()
 					runtime.EventsEmit(a.ctx, "updateColors", a.color_schemes)
+					runtime.EventsEmit(a.ctx, "updateActiveColor", a.active)
 				}
             case _, ok := <-watcher.Errors:
                 if !ok {

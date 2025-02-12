@@ -1,9 +1,16 @@
 <script lang="ts">
+	import type { LayoutProps } from './$types';
+
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 	import '../app.css';
+    import { CreateColorSchemeStore, SetColorStore } from '$lib/stores/colors.svelte';
 	
-	let { children } = $props();
+	let { data, children }: LayoutProps = $props();
+
+	let color_store = CreateColorSchemeStore(data.color_scheme);
+
+	SetColorStore(color_store);
 </script>
 
 <div class="app">

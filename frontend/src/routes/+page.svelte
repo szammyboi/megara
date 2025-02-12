@@ -1,17 +1,7 @@
 <script lang="ts">
     import SearchBar from '$lib/components/SearchBar.svelte';
     import SearchCard from '$lib/components/SearchCard.svelte';
-	import { EventsOn } from '$runtime';
 
-	import { SearchWord, FetchDetails, GetColors } from '$go';
-	import type { types } from '$gotypes';
-    import Logo from '$lib/components/Logo.svelte';
-
-	import { color_schemes } from '$lib/stores/colors.svelte';
-
-	$effect(() => {
-		console.log($color_schemes);
-	})
 </script>
 
 <svelte:head>

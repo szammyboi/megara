@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
+    import { GetColorStore } from '$lib/stores/colors.svelte';
 
-	import { color_schemes } from '$lib/stores/colors.svelte';
+	//import { color_schemes } from '$lib/stores/colors.svelte';
 
 	interface Props {
 		word: string;
@@ -15,10 +16,10 @@
 		definition
 	}: Props = $props();
 
-
+	let color_scheme = GetColorStore();
 </script>
 
-<Card color={$color_schemes[0].color1}>
+<Card color={$color_scheme.color1}>
 	<div id="align">
 		<div>
 			<h1 id="title">{word.toUpperCase()}:</h1>	
