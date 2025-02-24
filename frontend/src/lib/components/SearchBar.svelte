@@ -1,8 +1,6 @@
 <script lang="ts">
-	import type { SvelteHTMLElements } from 'svelte/elements';
-
 	interface Props {
-		color?: string;
+		color: string;
 		symbol: string;
 		value?: string;
 	}
@@ -14,9 +12,13 @@
 	}: Props = $props();
 </script>
 
+<!--component
 
-<section>
-	<input bind:value={value} autocomplete="off" spellcheck="false">
+should color be activecolor set by layout?
+-->
+
+<section style="--color: {color};">
+	<input bind:value={value} autocomplete="off" spellcheck="false" autofocus={true}>
 	<div id="symbolarea">
 		<div id="symbol">
 			{symbol}
@@ -26,12 +28,11 @@
 
 <style>
 	section {
-		background: #362712;
-		width: 55vw;
+		width: 100%;
 		height: 60px;
 		display: flex;
 		flex-direction:row;
-		margin-right: 7vw;
+		background-color: var(--overlay1);
 	}
 
 	input, input:focus {
@@ -41,13 +42,13 @@
 		appearance: none;
 		width: 100%;
 		font-size: 30px;
-		color: #d9ae80;
 		font-family: "Alagard";
+		color: var(--text);
 	}
 
 	input::selection {
-		color: #221a02;
-		background-color: #ef540a;
+		color: var(--base);
+		background-color: var(--primary1);
 	}
 
 	#symbolarea {
@@ -56,18 +57,19 @@
 		justify-content: center;
 		width: fit-content;
 		height: 100%;
-		margin-right: calc(calc(60px - 4.25vw) / 2);
+		margin-right: calc(calc(60px - 3.75vw) / 2);
 	}
 
 	#symbol {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: #ff5813;
-		color: #201a01;
-		width: 4.25vw;
-		height: 4.25vw;
+		width: 3.75vw;
+		height: 3.75vw;
 		font-size: 20px;
 		font-family: "Alagard";
+
+		color: var(--base);
+		background-color: var(--color);
 	}
 </style>

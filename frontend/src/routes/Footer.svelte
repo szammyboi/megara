@@ -2,14 +2,16 @@
 	import { page } from '$app/state';
     import Logo from '$lib/components/Logo.svelte';
     import SearchBar from '$lib/components/SearchBar.svelte';
+    import { GetColorStore } from '$lib/stores/colors.svelte';
 
+	let color_scheme = GetColorStore();
 </script>
-
+<!--
 <footer>
 	<Logo />
-	<SearchBar symbol="?"/>
+	<SearchBar symbol="?" color={$color_scheme.primary1}/>
 </footer>
-
+-->
 <style>
 	footer {
 		display: flex;

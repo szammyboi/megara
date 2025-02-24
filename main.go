@@ -73,9 +73,6 @@ func main() {
 		Bind: []interface{}{
 			app,
 		},
-		EnumBind: []interface{}{
-			DefaultColors,
-		},
 		Windows: &windows.Options{
 			CustomTheme: &windows.ThemeSettings {
 				DarkModeTitleBar:   windows.RGB(34, 26, 2),

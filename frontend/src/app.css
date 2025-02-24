@@ -55,3 +55,37 @@ html {
 	font-family: 'Rose';
 	overflow: hidden;
 }
+
+top {
+	flex: 1;
+	margin-top: 3vw;
+	margin-bottom: 3vw;
+	display: flex;
+	align-items:center;
+	flex-direction:row;
+}
+
+right {
+	flex: 1;
+	height: 100%;
+	margin-left: 3vw;
+	margin-right: 9vw;
+}
+
+left {
+	height: 100%;
+	margin-left: 3vw;
+	margin-right: 3vw;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	align-content:center;
+	align-items: center;
+	gap: 6vw;
+	margin-left: 3vw;
+	margin-right: 3vw;
+	margin-bottom: 3vw;
+	padding-right: 6vw;
+}

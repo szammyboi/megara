@@ -83,7 +83,7 @@ func (a *App) SearchWord(lang1 string, lang2 string, word string) []SearchResult
 	resp := fasthttp.AcquireResponse()
 	err := a.client.Do(req, resp)
 	fasthttp.ReleaseRequest(req)
-	if err == nil {
+	if err == nil && resp.StatusCode() == fasthttp.StatusOK {
 		current := [4][]byte{}
 		current_index := 0
 		for _, char := range resp.Body() {

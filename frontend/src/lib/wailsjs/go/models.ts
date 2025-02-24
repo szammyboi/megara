@@ -1,24 +1,16 @@
 export namespace main {
 	
-	export enum ColorDefaults {
-	    NAME = "Megara",
-	    BACKGROUND = "#201a01",
-	    OVERLAY = "#342711",
-	    TEXT = "#d9ae80",
-	    COLOR1 = "#ef540a",
-	    COLOR2 = "#cc094d",
-	    COLOR3 = "#578b99",
-	    COLOR4 = "#e58c00",
-	}
 	export class ColorScheme {
 	    name: string;
-	    background: string;
-	    overlay: string;
+	    base: string;
+	    overlay1: string;
+	    overlay2: string;
+	    overlay3: string;
 	    text: string;
-	    color1: string;
-	    color2: string;
-	    color3: string;
-	    color4: string;
+	    primary1: string;
+	    primary2: string;
+	    primary3: string;
+	    primary4: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new ColorScheme(source);
@@ -27,13 +19,15 @@ export namespace main {
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.name = source["name"];
-	        this.background = source["background"];
-	        this.overlay = source["overlay"];
+	        this.base = source["base"];
+	        this.overlay1 = source["overlay1"];
+	        this.overlay2 = source["overlay2"];
+	        this.overlay3 = source["overlay3"];
 	        this.text = source["text"];
-	        this.color1 = source["color1"];
-	        this.color2 = source["color2"];
-	        this.color3 = source["color3"];
-	        this.color4 = source["color4"];
+	        this.primary1 = source["primary1"];
+	        this.primary2 = source["primary2"];
+	        this.primary3 = source["primary3"];
+	        this.primary4 = source["primary4"];
 	    }
 	}
 	export class SearchResult {

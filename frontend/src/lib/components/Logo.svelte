@@ -11,19 +11,18 @@
 <style>
 	#logo {
 		font-family: "Alagard";
-		--background-color:red;
 	}
 
 	h1 {
-		color: #816a45;
 		font-size: 50px;
 		line-height: 0.9;
+		color: var(--overlay3);
 	}
 
 	h2 {
-		color: #5c4c2b;
 		font-size: 33px;
 		line-height: 0.9;
+		color: var(--overlay2);
 	}
 </style>
 

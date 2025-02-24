@@ -1,21 +1,25 @@
 package main
 
 import (
+	"log"
 	"os"
+
 	"github.com/BurntSushi/toml"
 	"github.com/fsnotify/fsnotify"
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 type ColorScheme struct {
-	Name string `json:"name"`
-	Background string `json:"background"`
-	Overlay string `json:"overlay"`
-	Text string `json:"text"`
-	Color1 string `json:"color1"`
-	Color2 string `json:"color2"`
-	Color3 string `json:"color3"`
-	Color4 string `json:"color4"`
+	Name     string `json:"name"`
+	Base     string `json:"base"`
+	Overlay1 string `json:"overlay1"`
+	Overlay2 string `json:"overlay2"`
+	Overlay3 string `json:"overlay3"`
+	Text     string `json:"text"`
+	Primary1 string `json:"primary1"`
+	Primary2 string `json:"primary2"`
+	Primary3 string `json:"primary3"`
+	Primary4 string `json:"primary4"`
 }
 
 type ColorSchemeLayout struct {
@@ -26,40 +30,30 @@ type ColorSchemeLayout struct {
 type ColorDefaults string
 
 const (
-    Name          ColorDefaults = "Megara"
-    Background    ColorDefaults = "#201a01"
-    Overlay       ColorDefaults = "#342711"
-    Text          ColorDefaults = "#d9ae80"
-    Color1        ColorDefaults = "#ef540a"
-    Color2        ColorDefaults = "#cc094d"
-    Color3        ColorDefaults = "#578b99"
-    Color4        ColorDefaults = "#e58c00"
+    Name      ColorDefaults = "Megara"
+    Base      ColorDefaults = "#201a01"
+    Overlay1  ColorDefaults = "#342711"
+    Overlay2  ColorDefaults = "#342711"
+    Overlay3  ColorDefaults = "#342711"
+    Text      ColorDefaults = "#d9ae80"
+    Primary1  ColorDefaults = "#ef540a"
+    Primary2  ColorDefaults = "#cc094d"
+    Primary3  ColorDefaults = "#578b99"
+    Primary4  ColorDefaults = "#e58c00"
 )
-
-var DefaultColors  = []struct {
-    Value  ColorDefaults
-    TSName string
-}{
-    {Name, "NAME"},
-    {Background, "BACKGROUND"},
-    {Overlay, "OVERLAY"},
-    {Text, "TEXT"},
-    {Color1, "COLOR1"},
-    {Color2, "COLOR2"},
-    {Color3, "COLOR3"},
-    {Color4, "COLOR4"},
-}
 
 func GetDefaultColors() ColorScheme {
 	return ColorScheme {
-		Name: string(Name) , 
-		Background: string(Background),
-		Overlay: string(Overlay),
-		Text: string(Text),
-		Color1: string(Color1),
-		Color2: string(Color2),
-		Color3: string(Color3),
-		Color4: string(Color4),
+		Name:     string(Name) , 
+		Base:     string(Base),
+		Overlay1: string(Overlay1),
+		Overlay2: string(Overlay2),
+		Overlay3: string(Overlay3),
+		Text:     string(Text),
+		Primary1: string(Primary1),
+		Primary2: string(Primary2),
+		Primary3: string(Primary3),
+		Primary4: string(Primary4),
 	}
 }
 
@@ -101,6 +95,7 @@ func (a *App) LoadColors() {
 
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
+		log.Fatal(err)
 		return
     }
 	defer watcher.Close()

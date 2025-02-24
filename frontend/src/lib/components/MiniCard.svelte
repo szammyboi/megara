@@ -12,16 +12,25 @@
 
 <style>
 	#wrapper {
-		width: 55vw;
-		height: 55vh;
+		width: 100%;
+		height: 10vh;
 		border-radius: 15px;
 		user-select:none;
+		display: flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+		font-size: 30px;
+		font-family: "Alagard";
+		color: var(--base);
 	}
 
 	#container {
-		width: calc(55vw - 10vh);
-		height: 45vh;
-		margin-left: 5vh;
-		margin-top: 5vh;
+		width: calc(100% - 6vh);
+		height: calc(100% - 3vh);
+		display: flex;
+		flex-direction:row;
+		align-items: center;
+		justify-content:space-between;
 	}
 </style>
