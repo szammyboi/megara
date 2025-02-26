@@ -1,12 +1,14 @@
 <script lang="ts">
 	interface Props {
 		color: string;
+		text: string;
 		symbol: string;
 		value?: string;
 	}
 
 	let {
 		color,
+		text,
 		symbol,
 		value = $bindable(),
 	}: Props = $props();
@@ -17,7 +19,7 @@
 should color be activecolor set by layout?
 -->
 
-<section style="--color: {color};">
+<section style="--color: {color}; --textcolor: {text};">
 	<input bind:value={value} autocomplete="off" spellcheck="false" autofocus={true}>
 	<div id="symbolarea">
 		<div id="symbol">
@@ -43,7 +45,7 @@ should color be activecolor set by layout?
 		width: 100%;
 		font-size: 30px;
 		font-family: "Alagard";
-		color: var(--text);
+		color: var(--textcolor);
 	}
 
 	input::selection {

@@ -10,6 +10,7 @@ import (
 	"sort"
 	"strings"
 	"github.com/gocolly/colly/v2"
+	"net/url"
 )
 
 // App struct
@@ -78,12 +79,12 @@ func (a *App) shutdown(ctx context.Context) {
 func (a *App) SearchWord(lang1 string, lang2 string, word string) []SearchResult {
 	results := []SearchResult{}
 	req := fasthttp.AcquireRequest()
-		req.SetRequestURI("https://www.wordreference.com/autocomplete?dict=" +lang1 + lang2 +"&query=" + word)
+		req.SetRequestURI("https://www.wordreference.com/autocomplete?dict=" +lang1 + lang2 +"&query=" + url.QueryEscape(word))
 	req.Header.SetMethod(fasthttp.MethodGet)
 	resp := fasthttp.AcquireResponse()
 	err := a.client.Do(req, resp)
 	fasthttp.ReleaseRequest(req)
-	if err == nil && resp.StatusCode() == fasthttp.StatusOK {
+	if err == nil && resp.StatusCode() == 200 {
 		current := [4][]byte{}
 		current_index := 0
 		for _, char := range resp.Body() {

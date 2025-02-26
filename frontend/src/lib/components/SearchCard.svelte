@@ -6,18 +6,20 @@
 		word: string;
 		type: string;
 		definition: string;
+		color: string;
 	}
 
 	let {
 		word,
 		type,
-		definition
-	}: Props = $props();
+		definition,
+		color,
+		...rest
+	}: Props & any = $props();
 
-	let color_scheme = GetColorStore();
 </script>
 
-<Card color={$color_scheme.primary1}>
+<Card  {...rest} color={color} style="--color: {color};">
 	<div id="align">
 		<div>
 			<h1 id="title">{word.toUpperCase()}:</h1>	
@@ -56,7 +58,7 @@
 		padding-right: 5px;
 		line-height:1.1;
 		margin-bottom: 10px;
-		color: var(--primary1);
+		color: var(--color);
 		background-color: var(--base);
 	}
 
