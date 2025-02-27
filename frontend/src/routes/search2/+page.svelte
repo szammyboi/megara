@@ -37,6 +37,7 @@
 	});
 
 	$effect(() => {
+		detailed_results = [];
 		FetchDetails("en", "it", selected_word).then((result) => {
 			if (result.length > 0)
 				detailed_results = result;
@@ -103,7 +104,6 @@
 				select={(e: types.SearchResult) => {
 					active_state = 'browsing';
 					selected_word = e.word;
-					detailed_results = [];
 				}} 
 			/>
 		{:else}
