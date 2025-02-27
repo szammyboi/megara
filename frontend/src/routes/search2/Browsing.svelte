@@ -77,5 +77,11 @@
 		padding-right: 3vw;
 		scroll-padding-right: 4vw;
 		scroll-padding-left: 3vw;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        outline: 0;
 	}
 </style>
