@@ -21,7 +21,9 @@
     let colors = GetColorStore();
     let selected_index = $state(0);
 
-    $effect(() => {if (!focused) selected_index = 0; })
+    $effect(() => {
+		if (!focused) selected_index = 0; 
+	});
 
     onMount(() => {
 		const down = (event: KeyboardEvent) => {
@@ -54,7 +56,7 @@
 <left style="width: {width}px;"></left>
 <right>
     {#each options as option, index}
-        <MiniCard color={index == selected_index && focused ? $colors.primary1 : $colors.overlay3}>
+        <MiniCard color={(index == selected_index && focused) || options.length == 1 ? $colors.primary1 : $colors.overlay3}>
             <h1>{option.word.toUpperCase()}</h1>
             <h1>{option.language}</h1>
         </MiniCard>

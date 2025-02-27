@@ -48,7 +48,15 @@
 		const typing = (event: KeyboardEvent) => {
 			if (active_state != 'typing') return;
 
-			if (event.key == "Enter") {
+			if (event.key == "Enter" && search_results.length == 1)
+			{
+				event.stopImmediatePropagation();
+				event.preventDefault();
+				active_state = 'browsing';
+				selected_word = search_results[0].word;
+			}
+			else if (event.key == "Enter")
+			{
 				event.stopImmediatePropagation();
 				event.preventDefault();
 				active_state = 'selecting';
