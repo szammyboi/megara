@@ -20,9 +20,13 @@
 
 	let search_term = $state('');
 
-	let selected_word = $state('');
+	let selected_index: number = $state(0);
+
 	let search_results: types.SearchResult[] = $state([]);
-	let detailed_results: types.WordDetails[] = $state([]);
+
+	let preloaded: types.WordDetails[][] = $state(new Array(5));
+
+	let browse_results = $derived(preloaded[selected_index]);
 
 	$effect(() => {
 		if (search_term == '') {
@@ -36,13 +40,15 @@
 		});
 	});
 
-	$effect(() => {
-		detailed_results = [];
-		FetchDetails("en", "it", selected_word).then((result) => {
-			if (result.length > 0)
-				detailed_results = result;
-		});
-	});
+	const preload = () => {
+		preloaded = new Array(5);
+		for (let i = 0; i < search_results.length; i++) {
+			FetchDetails("en", "it", search_results[i].word).then((res) => {
+				if (res.length > 0)
+					preloaded[i] = res;
+			});
+		}
+	};
 
 	onMount(() => {
 		const typing = (event: KeyboardEvent) => {
@@ -53,13 +59,15 @@
 				event.stopImmediatePropagation();
 				event.preventDefault();
 				active_state = 'browsing';
-				selected_word = search_results[0].word;
+				preload();
+				selected_index = 0;
 			}
 			else if (event.key == "Enter")
 			{
 				event.stopImmediatePropagation();
 				event.preventDefault();
 				active_state = 'selecting';
+				preload();
 			}
 		};
 
@@ -79,6 +87,7 @@
 			if (event.shiftKey && event.key == "Backspace") {
 				event.stopImmediatePropagation();
 				event.preventDefault();
+				search_term = '';
 				active_state = 'typing';
 			} else if (event.key == "Backspace") {
 				event.preventDefault();
@@ -109,13 +118,13 @@
 				focused={active_state == 'selecting'} 
 				width={source_size} 
 				options={search_results} 
-				select={(e: types.SearchResult) => {
+				select={(res: types.SearchResult, i: number) => {
 					active_state = 'browsing';
-					selected_word = e.word;
+					selected_index = i;
 				}} 
 			/>
 		{:else}
-			<Browsing focused={active_state == 'browsing'} options={detailed_results} />
+			<Browsing focused={active_state == 'browsing'} options={browse_results} />
 		{/if}
 	</top>
 	<footer>

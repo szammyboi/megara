@@ -8,7 +8,7 @@
         focused: boolean;
 		width: number;
         options: types.SearchResult[];
-        select: (selected: types.SearchResult) => void;
+		select: (selected: types.SearchResult, index: number) => void;
 	}
 
     let { 
@@ -31,7 +31,7 @@
 
 			if (event.key == "Enter" && options.length > 0) {
 				event.preventDefault();
-                select(options[selected_index]);
+                select(options[selected_index], selected_index);
             } else if (event.key == "k") 
             {
 				event.preventDefault();
