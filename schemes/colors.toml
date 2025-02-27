@@ -1,0 +1,45 @@
+active = "kanagawa"
+
+[colorschemes.default]
+base = "#201a01"
+overlay1 = "#342711"
+overlay2 = "#5c4c2b"
+overlay3 = "#816a45"
+text = "#d2ae7e"
+primary1 = "#ef540a"
+primary2 = "#cc094d"
+primary3 = "#578b99"
+primary4 = "#e58c00"
+
+[colorschemes.catppuccin]
+base = "#303446"
+overlay1 = "#737994"
+overlay2 = "#838ba7"
+overlay3 = "#949cbb"
+text = "#c6d0f5"
+primary1 = "#ef9f76"
+primary2 = "#e5c890"
+primary3 = "#a6d189"
+primary4 = "#babbf1"
+
+[colorschemes.monotone]
+base = "#000000"
+overlay1 = "#ffffff"
+overlay2 = "#ffffff"
+overlay3 = "#ffffff"
+text = "#000000"
+primary1 = "#ffffff"
+primary2 = "#e5c890"
+primary3 = "#a6d189"
+primary4 = "#babbf1"
+
+[colorschemes.kanagawa]
+base = "#16161D"
+overlay1 = "#2A2A37"
+overlay2 = "#363646"
+overlay3 = "#54546D"
+text = "#DCD7BA"
+primary1 = "#957FB8"
+primary2 = "#7E9CD8"
+primary3 = "#C34043"
+primary4 = "#D27E99"
