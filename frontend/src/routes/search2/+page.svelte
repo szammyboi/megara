@@ -25,8 +25,6 @@
 	let detailed_results: types.WordDetails[] = $state([]);
 
 	$effect(() => {
-		detailed_results = [];
-
 		if (search_term == '') {
 			search_results = [];
 			return;
@@ -105,6 +103,7 @@
 				select={(e: types.SearchResult) => {
 					active_state = 'browsing';
 					selected_word = e.word;
+					detailed_results = [];
 				}} 
 			/>
 		{:else}

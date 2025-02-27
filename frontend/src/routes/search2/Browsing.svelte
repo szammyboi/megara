@@ -21,6 +21,8 @@
     let colors = GetColorStore();
     let selected_index = $state(0);
 
+    $effect(() => {if (!focused) selected_index = 0; })
+
     onMount(() => {
 		const down = (event: KeyboardEvent) => {
             if (!focused) return;
