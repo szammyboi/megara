@@ -3,6 +3,9 @@
   "workspaces": {
     "": {
       "name": "frontend",
+      "dependencies": {
+        "@githubnext/tiny-svelte-fsm": "^1.0.0",
+      },
       "devDependencies": {
         "@fontsource/fira-mono": "^5.0.0",
         "@neoconfetti/svelte": "^2.0.0",
@@ -78,6 +81,8 @@
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.24.2", "", { "os": "win32", "cpu": "x64" }, "sha512-7VTgWzgMGvup6aSqDPLiW5zHaxYJGTO4OokMjIlrCtf+VpEL+cXKtCvg723iguPYI5oaUNdS+/V7OU2gvXVWEg=="],
 
     "@fontsource/fira-mono": ["@fontsource/fira-mono@5.1.1", "", {}, "sha512-JDZUQuQQFTvPJgwOftXg44LOa7XYNqwTHHquEpi8rY6SK8m7Q5rWxmMX7nUOvRF2g+jc02mqmK2Y+WmviF9+VQ=="],
+
+    "@githubnext/tiny-svelte-fsm": ["@githubnext/tiny-svelte-fsm@1.0.0", "", { "peerDependencies": { "svelte": "^5.0.0-next.1" } }, "sha512-taFbtAsZHSCKgl3pEcRmBE4XsydJnZUTvwUMqb5VPVSAyzmT51tD8opSubbW2M84sA7hN1tfq3zHgcXrF06c+Q=="],
 
     "@isaacs/cliui": ["@isaacs/cliui@8.0.2", "", { "dependencies": { "string-width": "^5.1.2", "string-width-cjs": "npm:string-width@^4.2.0", "strip-ansi": "^7.0.1", "strip-ansi-cjs": "npm:strip-ansi@^6.0.1", "wrap-ansi": "^8.1.0", "wrap-ansi-cjs": "npm:wrap-ansi@^7.0.0" } }, "sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA=="],
 

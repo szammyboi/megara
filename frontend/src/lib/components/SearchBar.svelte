@@ -1,29 +1,36 @@
 <script lang="ts">
 	interface Props {
+		focused: boolean;
 		color: string;
-		text: string;
 		symbol: string;
 		value?: string;
 	}
 
 	let {
+		focused,
 		color,
-		text,
 		symbol,
 		value = $bindable(),
 	}: Props = $props();
+
+	let input: HTMLInputElement | undefined = $state();
+
+	$effect(() => {
+		if (input && focused)
+			input.focus();
+	});
+
+	const defocus = () => {
+		if (input && focused)
+			input.focus();
+	}
 </script>
 
-<!--component
-
-should color be activecolor set by layout?
--->
-
-<section style="--color: {color}; --textcolor: {text};">
-	<input bind:value={value} autocomplete="off" spellcheck="false" autofocus={true}>
-	<div id="symbolarea">
-		<div id="symbol">
-			{symbol}
+<section style="--color: {color};"  >
+	<input bind:value={value} autocomplete="off" spellcheck="false" disabled={!focused} bind:this={input} onblur={defocus}>
+	<div id="symbolarea" >
+		<div id="symbol" class={focused ? "" : "disabled"}>
+			{focused ? symbol : "X"}
 		</div>
 	</div>
 </section>
@@ -45,12 +52,16 @@ should color be activecolor set by layout?
 		width: 100%;
 		font-size: 30px;
 		font-family: "Alagard";
-		color: var(--textcolor);
+		color: var(--text);
 	}
 
 	input::selection {
 		color: var(--base);
 		background-color: var(--primary1);
+	}
+
+	input:disabled {
+		color: var(--base);
 	}
 
 	#symbolarea {
@@ -73,5 +84,9 @@ should color be activecolor set by layout?
 
 		color: var(--base);
 		background-color: var(--color);
+	}
+
+	#symbol.disabled {
+		background-color: var(--overlay1);
 	}
 </style>
